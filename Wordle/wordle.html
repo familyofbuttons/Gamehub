@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Wordle Duel</title>
+  <link rel="stylesheet" href="wordle.css" />
+</head>
+<body>
+
+  <div class="app-shell">
+
+    <header class="app-header">
+      <h1>Wordle Duel</h1>
+      <div class="players-bar">
+        <div class="player-card">
+          <div class="name-label">Setter</div>
+          <div id="setterName">Player 1</div>
+        </div>
+        <div class="player-card">
+          <div class="name-label">Guesser</div>
+          <div id="guesserName">Player 2</div>
+        </div>
+      </div>
+    </header>
+
+    <main class="main">
+
+      <section class="left">
+
+        <div class="panel">
+          <h2>Players</h2>
+
+          <div class="player-input-block">
+            <label>Setter (chooses word)</label>
+            <input id="setterInput" type="text" class="player-input" placeholder="Player 1">
+          </div>
+
+          <div class="player-input-block">
+            <label>Guesser (plays Wordle)</label>
+            <input id="guesserInput" type="text" class="player-input" placeholder="Player 2">
+          </div>
+
+          <button id="saveNames" class="btn">Save names</button>
+        </div>
+
+        <div class="panel">
+          <h2>Game Controls</h2>
+          <p>Secret word: <span id="secretStatus">Not set</span></p>
+          <button id="setWordBtn" class="btn">Set secret word</button>
+          <button id="newRoundBtn" class="btn">New round</button>
+          <button id="resetStatsBtn" class="btn danger-btn">Reset stats</button>
+        </div>
+
+        <div class="panel">
+          <h2>Scoreboard</h2>
+          <div id="scoreboard"></div>
+
+          <h3>Best Rounds</h3>
+          <div id="bestRounds"></div>
+
+          <h3>History</h3>
+          <div id="history"></div>
+        </div>
+
+      </section>
+
+      <section class="right">
+
+        <div class="board-container">
+          <div id="board" class="board"></div>
+        </div>
+
+        <div class="keyboard" id="keyboard"></div>
+
+      </section>
+
+    </main>
+  </div>
+
+  <!-- Secret word modal -->
+  <div id="wordModal" class="overlay hidden">
+    <div class="overlay-box">
+      <h2>Set Secret Word</h2>
+      <p>Setter, enter a 5-letter word:</p>
+      <input id="secretWordInput" type="text" maxlength="5" class="secret-input" />
+      <div class="overlay-actions">
+        <button id="cancelWordBtn" class="btn danger-btn">Cancel</button>
+        <button id="confirmWordBtn" class="btn">Confirm</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- End round modal -->
+  <div id="endOverlay" class="overlay hidden">
+    <div class="overlay-box">
+      <h2>Round Over</h2>
+      <p id="endText"></p>
+      <button id="closeEndBtn" class="btn">Close</button>
+    </div>
+  </div>
+
+  <script src="wordle.js"></script>
+</body>
+</html>

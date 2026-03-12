@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Hangman Duel</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-shell">
+
+    <header class="app-header">
+      <h1>Hangman Duel</h1>
+      <div class="scoreboard">
+        <div class="player-card" id="p1Card">
+          <div id="p1Name">Player 1</div>
+          <div class="score" id="p1Score">0</div>
+        </div>
+        <div class="vs">VS</div>
+        <div class="player-card" id="p2Card">
+          <div id="p2Name">Player 2</div>
+          <div class="score" id="p2Score">0</div>
+        </div>
+      </div>
+    </header>
+
+    <main class="main">
+
+      <section class="left">
+
+        <div class="panel">
+          <h2>Players</h2>
+
+          <div class="player-input-block">
+            <label>Player 1</label>
+            <input id="p1Input" type="text" class="player-input" placeholder="Player 1">
+          </div>
+
+          <div class="player-input-block">
+            <label>Player 2</label>
+            <input id="p2Input" type="text" class="player-input" placeholder="Player 2">
+          </div>
+
+          <button id="saveNames" class="btn">Save names</button>
+        </div>
+
+        <div class="panel">
+          <h2>Phrase</h2>
+          <p>Setter: <span id="setterLabel">Player 1</span></p>
+
+          <label>Phrase</label>
+          <div class="phrase-row">
+            <input id="phraseInput" type="password" class="phrase-big" placeholder="Enter phrase…">
+            <button id="togglePhrase" class="btn small-btn">Show</button>
+          </div>
+
+          <label class="lives-label">Lives</label>
+          <input id="livesInput" type="number" min="3" max="10" value="6">
+
+          <button id="startBtn" class="btn">Start round</button>
+        </div>
+
+        <div class="panel">
+          <h2>Leaderboard</h2>
+          <button id="resetStats" class="btn danger-btn">Reset stats</button>
+          <div id="leaderboard"></div>
+          <h3>History</h3>
+          <div id="history"></div>
+        </div>
+
+      </section>
+
+      <section class="right">
+
+        <div class="animal-box">
+          <div id="animal">🐋</div>
+          <div id="livesText">6 lives left</div>
+        </div>
+
+        <div id="phraseDisplay" class="phrase"></div>
+
+        <div class="keyboard" id="keyboard"></div>
+
+        <div class="full-guess">
+          <input id="fullGuess" type="text" placeholder="Guess full phrase…">
+          <button id="fullGuessBtn" class="btn secondary">Guess</button>
+        </div>
+
+        <div id="roundMsg" class="round-msg"></div>
+
+      </section>
+
+    </main>
+  </div>
+
+  <div id="winOverlay" class="overlay hidden">
+    <div class="overlay-box">
+      <h2>You win!</h2>
+      <p id="winText"></p>
+      <button id="winNext" class="btn">Start new round</button>
+    </div>
+  </div>
+
+  <div id="loseOverlay" class="overlay hidden">
+    <div class="overlay-box">
+      <h2>You lose!</h2>
+      <p id="loseText"></p>
+      <button id="loseNext" class="btn">Start new round</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

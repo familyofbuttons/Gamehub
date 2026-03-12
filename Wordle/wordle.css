@@ -1,0 +1,282 @@
+body {
+  margin: 0;
+  background: #0b1020;
+  color: #fff;
+  font-family: system-ui, sans-serif;
+}
+
+.app-shell {
+  width: 1100px;
+  margin: 20px auto;
+  background: #111827;
+  border-radius: 20px;
+  padding-bottom: 20px;
+  border: 1px solid #334155;
+}
+
+.app-header {
+  padding: 20px;
+  border-bottom: 1px solid #334155;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.players-bar {
+  display: flex;
+  gap: 10px;
+}
+
+.player-card {
+  background: #1e293b;
+  padding: 8px 12px;
+  border-radius: 12px;
+  border: 1px solid #334155;
+  min-width: 120px;
+}
+
+.name-label {
+  font-size: 11px;
+  color: #9ca3af;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+}
+
+.left {
+  padding: 20px;
+  border-right: 1px solid #334155;
+}
+
+.right {
+  padding: 20px;
+}
+
+.panel {
+  background: #1e293b;
+  padding: 14px;
+  border-radius: 12px;
+  border: 1px solid #334155;
+  margin-bottom: 14px;
+}
+
+.player-input-block {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 12px;
+}
+
+.player-input {
+  padding: 8px;
+  font-size: 14px;
+  border-radius: 8px;
+  border: 1px solid #334155;
+  background: #0f172a;
+  color: #fff;
+}
+
+.btn {
+  background: #22c55e;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 8px;
+}
+
+.danger-btn {
+  background: #ef4444;
+}
+
+.board-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.board {
+  display: grid;
+  grid-template-rows: repeat(6, 1fr);
+  gap: 6px;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 6px;
+}
+
+.tile {
+  width: 60px;
+  height: 60px;
+  border-radius: 6px;
+  border: 2px solid #334155;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  text-transform: uppercase;
+  background: #0f172a;
+}
+
+.tile.filled {
+  border-color: #4b5563;
+}
+
+.tile.correct {
+  background: #22c55e;
+  border-color: #16a34a;
+  color: #fff;
+}
+
+.tile.present {
+  background: #eab308;
+  border-color: #ca8a04;
+  color: #fff;
+}
+
+.tile.absent {
+  background: #4b5563;
+  border-color: #374151;
+  color: #e5e7eb;
+}
+
+/* KEYBOARD */
+
+.keyboard {
+  display: grid;
+  grid-template-rows: repeat(3, auto);
+  gap: 6px;
+  justify-content: center;
+}
+
+.key-row {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+}
+
+.key {
+  min-width: 36px;
+  padding: 8px 6px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* NEW — LIGHT GREY = UNUSED */
+.key.unused {
+  background: #9ca3af;
+  color: #1f2937;
+}
+
+/* NEW — DARK GREY = USED */
+.key.used {
+  background: #4b5563;
+  color: #e5e7eb;
+}
+
+/* GREEN */
+.key.correct {
+  background: #22c55e !important;
+  color: #ffffff !important;
+}
+
+/* YELLOW */
+.key.present {
+  background: #eab308 !important;
+  color: #ffffff !important;
+}
+
+/* DARK GREY (same as used) */
+.key.absent {
+  background: #4b5563 !important;
+  color: #e5e7eb !important;
+}
+
+.key.wide {
+  min-width: 60px;
+}
+
+/* OVERLAYS */
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.25s;
+}
+
+.overlay.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.overlay-box {
+  background: #1e293b;
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid #334155;
+  text-align: center;
+  min-width: 280px;
+}
+
+.hidden {
+  display: none;
+}
+
+.secret-input {
+  margin-top: 10px;
+  padding: 8px;
+  font-size: 18px;
+  text-transform: uppercase;
+  border-radius: 8px;
+  border: 1px solid #334155;
+  background: #0f172a;
+  color: #fff;
+  width: 100%;
+  text-align: center;
+}
+
+.overlay-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 14px;
+}
+
+/* STATS */
+
+#scoreboard {
+  font-size: 13px;
+  color: #e5e7eb;
+  margin-top: 6px;
+}
+
+#bestRounds {
+  font-size: 12px;
+  color: #9ca3af;
+  margin-top: 6px;
+}
+
+#history {
+  font-size: 11px;
+  color: #9ca3af;
+  max-height: 160px;
+  overflow-y: auto;
+  margin-top: 6px;
+}
+
+.history-item {
+  margin-bottom: 6px;
+}

@@ -1,0 +1,62 @@
+body {
+  margin: 0;
+  background: #0b1020;
+  color: #fff;
+  font-family: system-ui, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.menu-shell {
+  text-align: center;
+}
+
+.title {
+  font-size: 48px;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-size: 18px;
+  color: #9ca3af;
+  margin-bottom: 40px;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 200px);
+  gap: 20px;
+  justify-content: center;
+}
+
+.menu-card {
+  background: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 16px;
+  padding: 20px;
+  text-decoration: none;
+  color: #fff;
+  transition: 0.2s;
+}
+
+.menu-card:hover {
+  background: #334155;
+  transform: translateY(-4px);
+}
+
+.menu-card.disabled {
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.emoji {
+  font-size: 48px;
+  margin-bottom: 10px;
+}
+
+.label {
+  font-size: 18px;
+  font-weight: bold;
+}

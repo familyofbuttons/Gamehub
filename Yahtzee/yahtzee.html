@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Yahtzee Duel</title>
+  <link rel="stylesheet" href="yahtzee.css" />
+</head>
+<body>
+
+  <div class="app-shell">
+
+    <header class="app-header">
+      <h1>Yahtzee Duel</h1>
+      <div class="scoreboard">
+        <div class="player-card">
+          <div id="p1Name">Player 1</div>
+          <div class="score" id="p1Score">0</div>
+        </div>
+        <div class="vs">VS</div>
+        <div class="player-card">
+          <div id="p2Name">Player 2</div>
+          <div class="score" id="p2Score">0</div>
+        </div>
+      </div>
+    </header>
+
+    <main class="main">
+
+      <section class="left">
+
+        <div class="panel">
+          <h2>Players</h2>
+
+          <div class="player-input-block">
+            <label>Player 1</label>
+            <input id="p1Input" type="text" class="player-input" placeholder="Player 1">
+          </div>
+
+          <div class="player-input-block">
+            <label>Player 2</label>
+            <input id="p2Input" type="text" class="player-input" placeholder="Player 2">
+          </div>
+
+          <button id="saveNames" class="btn">Save names</button>
+        </div>
+
+        <div class="panel">
+          <h2>Game Controls</h2>
+
+          <p>Current player: <span id="currentPlayerLabel">Player 1</span></p>
+          <p>Rolls left: <span id="rollsLeft">3</span></p>
+
+          <button id="rollBtn" class="btn">Roll Dice</button>
+          <button id="resetGame" class="btn danger-btn">Reset Game</button>
+        </div>
+
+        <div class="panel">
+          <h2>Leaderboard</h2>
+          <button id="resetStats" class="btn danger-btn">Reset Stats</button>
+          <div id="leaderboard"></div>
+
+          <h3>History</h3>
+          <div id="history"></div>
+        </div>
+
+      </section>
+
+      <section class="right">
+
+        <div class="dice-area" id="diceArea"></div>
+
+        <div class="scorecards-container">
+          <div>
+            <h2 id="p1NameCard">Player 1</h2>
+            <div id="scorecard1" class="scorecard"></div>
+          </div>
+
+          <div>
+            <h2 id="p2NameCard">Player 2</h2>
+            <div id="scorecard2" class="scorecard"></div>
+          </div>
+        </div>
+
+      </section>
+
+    </main>
+  </div>
+
+  <div id="endOverlay" class="overlay hidden">
+    <div class="overlay-box">
+      <h2>Game Over</h2>
+      <p id="endText"></p>
+      <button id="newGameBtn" class="btn">Start New Game</button>
+    </div>
+  </div>
+
+  <div id="yahtzeeOverlay" class="overlay hidden">
+    <div class="overlay-box yahtzee-box">
+      <h2 class="yahtzee-title">YAHTZEE!!!</h2>
+      <p class="yahtzee-sub">Absolute chaos. You did it.</p>
+      <button id="yahtzeeBack" class="btn">Return to game</button>
+    </div>
+  </div>
+
+  <script src="yahtzee.js"></script>
+</body>
+</html>
